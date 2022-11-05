@@ -8,7 +8,7 @@ import (
 )
 
 func Routes(router *gin.Engine) {
-	app := controllers.NewApplication(database.ProductData(database.Client, "Products"), database.UserData(database.Client, "Users"), database.OrderData(database.Client, "Orders"), database.PayloadData(database.Client, "Payloads"))
+	app := controllers.NewApplication(database.ProductData(database.Client, "Products"), database.UserData(database.Client, "Users"), database.OrderData(database.Client, "Orders"), database.PayloadData(database.Client, "Payloads"), database.MessageData(database.Client, "Messages"))
 
 	router.POST("/user/sign-up", controllers.SignUp())
 	router.POST("/user/log-in", controllers.LogIn())
@@ -32,6 +32,7 @@ func Routes(router *gin.Engine) {
 	router.GET("/user/cart-checkout", app.BuyFromCart())
 	router.POST("/user/payment", controllers.PaymentOrders())
 	router.GET("/user/view-payment", controllers.GetAllPayloads())
+	router.POST("/user/message-send", controllers.SmsSender())
 
 	// router.GET("/user/instant-buy", app.InstantBuy())
 }

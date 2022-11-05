@@ -24,6 +24,7 @@ var UserCollection *mongo.Collection = database.UserData(database.Client, "Users
 var ProductCollection *mongo.Collection = database.ProductData(database.Client, "Products")
 var OrderCollection *mongo.Collection = database.OrderData(database.Client, "Orders")
 var PayloadCollection *mongo.Collection = database.OrderData(database.Client, "Payloads")
+var MessageCollection *mongo.Collection = database.MessageData(database.Client, "Messages")
 var Validate = validator.New()
 
 func HashPassword(password string) string {

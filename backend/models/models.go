@@ -75,6 +75,11 @@ type Payload struct {
 	Signature   string `json:"signature"`
 }
 
+type MessageSend struct {
+	PhoneNumberTo string `json:"phoneTo"`
+	BodyMessage   string `json:"bodyMessage"`
+}
+
 type Response struct {
 	Status string      `json:"status"`
 	Code   uint        `json:"code"`

@@ -54,3 +54,8 @@ func PayloadData(client *mongo.Client, collectionName string) *mongo.Collection 
 	var payloadCollection *mongo.Collection = client.Database("Ecommerce").Collection(collectionName)
 	return payloadCollection
 }
+
+func MessageData(client *mongo.Client, collectionName string) *mongo.Collection {
+	var messageCollection *mongo.Collection = client.Database("Ecommerce").Collection(collectionName)
+	return messageCollection
+}
